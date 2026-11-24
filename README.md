@@ -10,21 +10,23 @@ message its own sub-chats.
 
 ## Install
 
-In Claude Code, run:
-
-```
-/plugin marketplace add https://github.com/michaeladvantagepro/claude-coordinator.git
-/plugin install coordinator@claude-coordinator
-```
-
-Or from a terminal:
+From a terminal (PowerShell, Terminal, or any shell where `claude` works), run:
 
 ```
 claude plugin marketplace add https://github.com/michaeladvantagepro/claude-coordinator.git
 claude plugin install coordinator@claude-coordinator --scope user
 ```
 
-Then fully quit and reopen Claude so the plugin loads.
+Then fully quit and reopen Claude so the plugin loads. This works for the Claude desktop
+app too, since it reads the same settings.
+
+In the desktop app, typing `/plugin` opens the plugins window instead of running the
+commands above. You can add the marketplace there, or ask Claude in a chat: "Run
+`claude plugin marketplace add https://github.com/michaeladvantagepro/claude-coordinator.git`
+and `claude plugin install coordinator@claude-coordinator --scope user`."
+
+In the Claude Code terminal app, `/plugin marketplace add <url>` and
+`/plugin install coordinator@claude-coordinator` also work.
 
 **Updates:** turn on auto-update for the `claude-coordinator` marketplace
 (`/plugin` → Marketplaces), and new versions install the next time Claude starts.
