@@ -6,6 +6,11 @@ installed version, the update date and local time, and the release notes for eac
 since the recorded one. It tells you to follow this file if you are this project's
 coordinator. Sub-chats ignore it; it's only for the coordinator.
 
+The hook tells each chat in the project folder on its own, at most once a day, until the
+project's CLAUDE.md records the installed version. So a Planning chat or any other chat
+may get the note too; it ignores it. If you didn't get it today, you will on your next
+message, until you've applied the update.
+
 When you get that note, apply the update yourself, in the same turn as your reply to the
 user's message. Don't ask whether to update, and don't wait for a yes.
 

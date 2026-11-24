@@ -5,6 +5,10 @@ followed by a short bulleted list, one change per line, in plain language for a
 non-technical reader. (Entries before 0.4.4 are one or two sentences.) The update hook
 reads this file, so keep that heading format.
 
+## 0.4.5 - 2026-11-24
+- Fixed: a coordinator could miss an update when another chat in the same project folder got the first message of the day.
+- Each chat is now told about an update on its own, at most once a day, until the coordinator has applied it.
+
 ## 0.4.4 - 2026-11-24
 - Updates now apply on their own: the coordinator updates its rules on your next message and leaves a short note listing what changed.
 - It no longer asks before updating. It only asks a question when an update adds a new setting, and only once.

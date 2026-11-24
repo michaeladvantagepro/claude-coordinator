@@ -98,6 +98,25 @@ function updateStamp(installed) {
   };
 }
 
+// Per-chat state files pile up, so delete the ones not modified in the last 30 days.
+// Never throws.
+function cleanOldState(stateDir) {
+  try {
+    const cutoff = Date.now() - 30 * 24 * 60 * 60 * 1000;
+    for (const name of fs.readdirSync(stateDir)) {
+      if (!name.endsWith('.json')) continue;
+      try {
+        const file = path.join(stateDir, name);
+        if (fs.statSync(file).mtimeMs < cutoff) fs.unlinkSync(file);
+      } catch (e) {
+        // skip this file
+      }
+    }
+  } catch (e) {
+    // no state folder yet, or unreadable: nothing to clean
+  }
+}
+
 function main() {
   const input = readInput();
   const dirs = [process.env.CLAUDE_PROJECT_DIR, input.cwd, process.cwd()].filter(Boolean);
@@ -111,23 +130,28 @@ function main() {
   const installed = JSON.parse(manifest).version;
   if (!installed || compareVersions(installed, recorded.version) <= 0) return;
 
-  // At most one check a day per project, and one notice per new version per project.
+  // Each chat is told independently, at most once a local day, until the project's
+  // recorded version catches up (the check above then stays silent for every chat).
+  // State is keyed by project folder and the chat's session_id (folder alone if the
+  // input has none).
+  const folder = path.resolve(recorded.dir).toLowerCase();
+  const session = typeof input.session_id === 'string' ? input.session_id : '';
   const key = crypto
     .createHash('sha1')
-    .update(path.resolve(recorded.dir).toLowerCase())
+    .update(session ? `${folder}\n${session}` : folder)
     .digest('hex')
     .slice(0, 16);
   const stateDir = path.join(os.homedir(), '.claude', 'coordinator', 'state');
   const stateFile = path.join(stateDir, `${key}.json`);
   const today = localDate(new Date());
+  cleanOldState(stateDir);
   let state = {};
   try {
-    state = JSON.parse(readText(stateFile) || '{}');
+    state = JSON.parse(readText(stateFile) || '{}') || {};
   } catch (e) {
     state = {};
   }
   if (state.lastCheckDate === today) return;
-  if (state.notifiedVersion === installed) return;
 
   const stamp = updateStamp(installed);
   const notes = notesBetween(root, recorded.version, installed);
@@ -151,7 +175,7 @@ function main() {
 
   // Record the notice before printing it, so a failure here can never repeat it.
   fs.mkdirSync(stateDir, { recursive: true });
-  fs.writeFileSync(stateFile, JSON.stringify({ lastCheckDate: today, notifiedVersion: installed }));
+  fs.writeFileSync(stateFile, JSON.stringify({ lastCheckDate: today }));
 
   process.stdout.write(
     JSON.stringify({
