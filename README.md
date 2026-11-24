@@ -13,14 +13,14 @@ message its own sub-chats.
 In Claude Code, run:
 
 ```
-/plugin marketplace add michaeladvantagepro/claude-coordinator
+/plugin marketplace add https://github.com/michaeladvantagepro/claude-coordinator.git
 /plugin install coordinator@claude-coordinator
 ```
 
 Or from a terminal:
 
 ```
-claude plugin marketplace add michaeladvantagepro/claude-coordinator
+claude plugin marketplace add https://github.com/michaeladvantagepro/claude-coordinator.git
 claude plugin install coordinator@claude-coordinator --scope user
 ```
 
