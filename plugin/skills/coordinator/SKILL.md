@@ -58,6 +58,7 @@ covers, and again if you no longer remember it:
 | Launching or briefing a sub-chat | [sub-chats.md](references/sub-chats.md), then [brief-rules.md](references/brief-rules.md) |
 | Writing the project's CLAUDE.md section | [claude-md-section.md](references/claude-md-section.md) |
 | Anything touching company knowledge | [knowledge-base.md](references/knowledge-base.md) |
+| Writing, reviewing or combining knowledge base articles | [article-guidelines.md](references/article-guidelines.md) |
 | A sub-chat or you running out of context, a DONE chat asking for a fresh one | [handovers.md](references/handovers.md) |
 | A sub-chat's final report arrives | [combining.md](references/combining.md) |
 | The update hook tells you the installed plugin is newer than the recorded version (apply it yourself and leave a note; never ask) | [staying-current.md](references/staying-current.md) |

@@ -32,7 +32,9 @@ the end of the title, as `(m/d/yy h:mm AM/PM)` (for example
 - **Rules.** Paste the "Rules every brief must include" (`brief-rules.md`) into every
   brief, with the sub-chat's company, the project's knowledge base output and the
   `.open-questions` session ID filled in. Knowledge chat briefs keep rule 7 (steps,
-  screenshots, known gaps); Build chat briefs may leave it out. Sub-chats never get their own standing chats
+  screenshots, known gaps) and tell the chat to follow `article-guidelines.md` where the
+  base's own guide is silent. Give its full path (`${CLAUDE_SKILL_DIR}/references/
+  article-guidelines.md`, filled in), since a sub-chat doesn't load this skill; Build chat briefs may leave it out. Sub-chats never get their own standing chats
   (see `standing-chats.md`).
 - **Shared files.** Sub-chats never edit the shared files. They list registrations and
   change-log details in their final report instead. One exception: a sub-chat that

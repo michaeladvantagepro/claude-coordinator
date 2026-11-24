@@ -28,4 +28,6 @@ this: it is applied automatically, see `staying-current.md`.) Then:
 5. For each sub-chat that's still running, send it the "Rules every brief must include"
    (see `brief-rules.md`) with its company filled in, since its original brief doesn't
    have those rules.
+   If the project is itself a knowledge base with no authoring guide, offer in one line to
+   start one from `article-guidelines.md` and do it on a yes (see `knowledge-base.md`).
 6. Tell the user what you changed before doing any other work.

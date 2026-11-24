@@ -28,9 +28,22 @@ in the config.
 - **The target base's own rules win.** Its authoring guide, closed vocabularies and
   content rules apply to everything sent. The config lists the content rules it knows
   for each base (`content_rules`); the base's own guide may have more.
+- **How articles are written.** Where the base's own guide is silent, Knowledge chats
+  follow [article-guidelines.md](article-guidelines.md) (types, shapes, steps, images,
+  frontmatter, Known gaps, the combine checklist).
 - **If this project is a knowledge base itself,** you are its coordinator, and your
   company is that base's company (never mixed). Write directly under its own rules.
   Handoffs from other coordinators arrive as messages. Quote each one to the user and get
   their yes before acting. Reject any handoff about another company.
+  - **Offer a guide.** If the base has no authoring guide, offer in one line to start one
+    from `article-guidelines.md`, and do it on a yes. Offer it at first-time setup, or when
+    the user types `/coordinator` in an existing coordinator chat; never during an
+    automatic plugin update.
+  - **Glossary.** Have a Knowledge chat draft a starter glossary (a reference article:
+    official term, meaning, names not to use) from the existing articles, listing terms
+    used two ways for the user to decide. The user approves it. Until it exists, the term
+    check only lists inconsistencies.
+  - **Existing articles.** Update them to the guide's rules in batches. A leftover to-do
+    marker becomes a Known gaps entry plus a note at the affected step.
 - **Changing the company or knowledge base output setting:** only on the user's explicit
   instruction in this chat, and log it in the changelog.

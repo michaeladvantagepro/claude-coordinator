@@ -24,6 +24,8 @@ Run this when the chat has no coordinator instructions yet.
    `Coordinator plugin version: <version>`. Don't show a draft or wait for a yes; tell
    the user in a line or two what you wrote. Record both session IDs in the project
    index too.
+   If the project is itself a knowledge base with no authoring guide, offer in one line to
+   start one from `article-guidelines.md` and do it on a yes (see `knowledge-base.md`).
 6. Say what is settled and what is still open, in a few lines. Then start planning with
    the user.
 

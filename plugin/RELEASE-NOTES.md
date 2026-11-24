@@ -5,6 +5,12 @@ followed by a short bulleted list, one change per line, in plain language for a
 non-technical reader. (Entries before 0.4.4 are one or two sentences.) The update hook
 reads this file, so keep that heading format.
 
+## 0.4.6 - 2026-11-24
+- New article guide: article types, section layouts, step style, red-annotated images, frontmatter and a review checklist.
+- Knowledge chats follow it wherever a knowledge base's own guide is silent.
+- Combining now runs a must-fix and nice-to-fix checklist on articles.
+- A knowledge base with no authoring guide is offered one at setup or when you type /coordinator.
+
 ## 0.4.5 - 2026-11-24
 - Fixed: a coordinator could miss an update when another chat in the same project folder got the first message of the day.
 - Each chat is now told about an update on its own, at most once a day, until the coordinator has applied it.

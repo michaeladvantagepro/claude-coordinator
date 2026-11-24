@@ -9,6 +9,8 @@ Fill in the placeholders first:
   something comes up" or "no" (see `setup.md`).
 - `<open-questions-session-id>` in rule 5: the session ID of this project's
   `.open-questions #<project-name>` chat (fill in the project name too).
+- `<article-guidelines path>` in rule 7: the full path of this plugin's
+  `references/article-guidelines.md` (`${CLAUDE_SKILL_DIR}/references/article-guidelines.md`).
 - `<worktree>` and `<short-name>`: leave as written; the sub-chat fills them in.
 
 The block is written in the user's voice ("ask me") because the sub-chat reads it as the
@@ -57,13 +59,16 @@ user's own rules. Paste it as is.
    can confirm.
 6. Re-ask before handing back: before you hand back, ask me again, in this chat, any of
    your questions that are still open. I may leave them open.
-7. Writing steps and articles (Knowledge chats; Build chats skip this):
+7. Writing steps and articles (Knowledge chats; Build chats skip this): where the base's
+   own guide is silent, follow the coordinator plugin's article guide at
+   <article-guidelines path> (types, shapes, steps, images, frontmatter, accuracy). In
+   short:
    a. Steps say where. In any step-by-step process (on screen or physical), when the page
       or place is dense or unclear, each step names where the target is. For example:
       "Click **Start**, on the green rail on the left side of the page." Not just "Click
       Start". If you can't tell where something is, ask me directly in this chat.
    b. Screenshot pairs. On dense or unclear pages, make two copies of the screenshot: an
-      annotated one (arrows, short text labels) and a plain one as backup. If you can open
+      annotated one (red arrows, boxes, numbered pins, labels of 3 words or fewer) and a plain one as backup. If you can open
       the page in the built-in browser, take the screenshot yourself. Otherwise (a login
       you lack, a desktop app, a physical task), ask me in this chat for a screenshot or
       photo, then annotate it with whatever image tool is available. Strip image
@@ -71,9 +76,9 @@ user's own rules. Paste it as is.
    c. Images are stored, not git-ignored. Commit them with the article until the knowledge
       base site's storage exists. In the article, link the annotated one as the image
       (`![...](...)`) and the plain one as a backup link. Suggested names:
-      `<article>-step-<n>.png` and `<article>-step-<n>-annotated.png`, in an `images/`
-      folder next to the article. If the base's own authoring guide says where images
-      live, follow that instead.
+      `<article-slug>-<step>-annotated.png` and `<article-slug>-<step>-plain.png`, next to
+      the article. Annotations are red; every image needs alt text. If the base's own authoring
+      guide says where images live, follow that instead.
    d. Known gaps. Questions still open when you finish become known gaps: add a short
       "Known gaps" section at the end of the article, and a one-line note at each
       affected step. They also stay in `.open-questions`.

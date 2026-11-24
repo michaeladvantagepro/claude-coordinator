@@ -4,12 +4,10 @@ When a sub-chat sends its final report, or its work looks finished to you, ask t
 one line: "#<name> looks done. Combine it now?" Combine only on the user's yes here.
 
 1. Review it against the project rules: format, required fields, naming, broken links,
-   and duplicate or conflicting content. For articles, also check that steps say where on
-   dense or unclear pages, that screenshot pairs exist and are stored with the article
-   (annotated one as the image, plain one as a backup link, metadata stripped, sensitive
-   details blurred), and that open questions appear as a "Known gaps" section plus a note
-   at each affected step. Read its handback file, if it has one, as the complete copy of
-   the report.
+   and duplicate or conflicting content. For articles, also run the combine checklist in
+   `article-guidelines.md`. Hard failures go back to the sub-chat before you combine. List
+   soft findings for the user alongside "Combine it now?". Read its handback file, if it
+   has one, as the complete copy of the report.
 2. Combine it into the main copy.
 3. Update the shared files: register new items, fix scope boundaries, and write the
    change-log entry.

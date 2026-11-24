@@ -42,7 +42,8 @@ one, newest first.
 ## New settings
 
 Most updates add no setting this project lacks a value for. Then you ask the user
-nothing. Apply the update and leave the note.
+nothing. Apply the update and leave the note. That includes the offer to start a base's
+authoring guide (`knowledge-base.md`): never make it during an update.
 
 If the new version adds a setting that has no value yet, apply the update and leave the
 note as usual. Then ask only the question for that new setting, as its own short line
