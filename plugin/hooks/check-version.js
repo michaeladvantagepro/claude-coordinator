@@ -70,7 +70,7 @@ function notesBetween(root, recorded, installed) {
   while ((m = re.exec(text))) {
     const start = m.index + m[0].length;
     const next = text.indexOf('\n## ', start);
-    const body = text.slice(start, next === -1 ? undefined : next).trim().replace(/\s+/g, ' ');
+    const body = text.slice(start, next === -1 ? undefined : next).trim(); // keep line breaks: a bulleted entry stays one bullet per line
     entries.push({ version: m[1], date: m[2].trim(), description: body });
   }
   return entries
@@ -91,8 +91,10 @@ function updateStamp(installed) {
   const d = new Date(entry.lastUpdated);
   if (isNaN(d.getTime())) return null;
   return {
-    date: d.toLocaleDateString('en-US'),
-    time: d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
+    date: d.toLocaleDateString('en-US', { year: '2-digit', month: 'numeric', day: 'numeric' }),
+    time: d
+      .toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
+      .replace(/[  ]/g, ' '),
   };
 }
 
@@ -135,15 +137,15 @@ function main() {
     `Installed coordinator plugin version: ${installed}.`,
     `Version recorded in this project's CLAUDE.md: ${recorded.version}.`,
   ];
-  if (stamp) lines.push(`Updated on ${stamp.date} at ${stamp.time} (local time).`);
-  lines.push('Release notes for the versions since the recorded one:');
+  if (stamp) lines.push(`Updated on ${stamp.date} ${stamp.time} (local time).`);
+  lines.push('Release notes for the versions since the recorded one, newest first:');
   if (notes.length) {
-    for (const n of notes) lines.push(`- ${n.version} (${n.date}): ${n.description}`);
+    for (const n of notes) lines.push(`${n.version} (${n.date}):`, n.description);
   } else {
-    lines.push('- (no release notes found)');
+    lines.push('(no release notes found)');
   }
   lines.push(
-    'If you are this project\'s coordinator, follow references/staying-current.md; otherwise ignore this.',
+    'If you are this project\'s coordinator, apply the update yourself in this same turn and leave the note, as references/staying-current.md says. Do not ask the user whether to update. Otherwise ignore this.',
     `(File: ${path.join(root, 'skills', 'coordinator', 'references', 'staying-current.md')})`
   );
 

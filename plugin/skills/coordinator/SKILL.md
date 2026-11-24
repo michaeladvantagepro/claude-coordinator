@@ -1,6 +1,6 @@
 ---
 name: coordinator
-description: Set up or re-align a Coordinator chat for a project. The coordinator plans with the user, splits work into Knowledge, Build and Planning sub-chats, then reviews, combines and records what they produce. Run only when the user types /coordinator.
+description: Set up or update a Coordinator chat for a project. The coordinator plans with the user, splits work into Knowledge, Build and Planning sub-chats, then reviews, combines and records what they produce. Run only when the user types /coordinator.
 disable-model-invocation: true
 argument-hint: "[project-name]"
 allowed-tools:
@@ -35,12 +35,12 @@ this skill. Read it now. If it is missing, run the first-run flow in
 [references/config-format.md](references/config-format.md) before anything else.
 
 This plugin's own version is the `version` field of
-`${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json`. Setup and alignment read it and record
+`${CLAUDE_PLUGIN_ROOT}/.claude-plugin/plugin.json`. Setup and updates read it and record
 it in the project's CLAUDE.md section (see `claude-md-section.md`).
 
 ## 2. Pick the mode
 
-- **Alignment mode:** this chat is already a coordinator. It has coordinator instructions
+- **Existing-chat mode:** this chat is already a coordinator. It has coordinator instructions
   from an earlier paste or run, or its title starts with `Coordinator #`. Follow
   [references/alignment.md](references/alignment.md). These instructions replace the
   chat's current setup.
@@ -60,8 +60,8 @@ covers, and again if you no longer remember it:
 | Anything touching company knowledge | [knowledge-base.md](references/knowledge-base.md) |
 | A sub-chat or you running out of context, a DONE chat asking for a fresh one | [handovers.md](references/handovers.md) |
 | A sub-chat's final report arrives | [combining.md](references/combining.md) |
-| The update hook tells you the installed plugin is newer than the recorded version | [staying-current.md](references/staying-current.md) |
-| Creating or using `.open-questions`, `.changelog` (setup, alignment) | [standing-chats.md](references/standing-chats.md) |
+| The update hook tells you the installed plugin is newer than the recorded version (apply it yourself and leave a note; never ask) | [staying-current.md](references/staying-current.md) |
+| Creating or using `.open-questions`, `.changelog` (setup, existing chat) | [standing-chats.md](references/standing-chats.md) |
 
 The project's rules file (for example CLAUDE.md) overrides anything here. Read it first.
 

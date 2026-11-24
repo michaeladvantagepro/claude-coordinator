@@ -7,7 +7,7 @@
     {
       "name": "coordinator",
       "source": "./plugin",
-      "description": "Sets up or re-aligns a Coordinator chat that plans, splits work into sub-chats, and combines their results."
+      "description": "Sets up or updates a Coordinator chat that plans, splits work into sub-chats, and combines their results."
     }
   ]
 }

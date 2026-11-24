@@ -19,14 +19,22 @@ Run this when the chat has no coordinator instructions yet.
 4. Create this project's standing chats, `.changelog #<project-name>` and
    `.open-questions #<project-name> (0 open)`, automatically and without asking (see
    `standing-chats.md`), so their session IDs are known before the next step.
-5. If the work lives in a repo, draft the "Coordinator and sub-chats" section (see
+5. If the work lives in a repo, write the "Coordinator and sub-chats" section (see
    `claude-md-section.md`), including the standing chats' session IDs and the line
-   `Coordinator plugin version: <version>`, show it, and write it only on a yes. Record
-   both session IDs in the project index too.
+   `Coordinator plugin version: <version>`. Don't show a draft or wait for a yes; tell
+   the user in a line or two what you wrote. Record both session IDs in the project
+   index too.
 6. Say what is settled and what is still open, in a few lines. Then start planning with
    the user.
 
 ## Project settings (ask at the start)
+
+Every setting is labelled **global** (about the person; saved in
+`~/.claude/coordinator/config.md`, see `config-format.md`) or **per project** (saved in
+the project's CLAUDE.md coordinator section). The settings below are all per project. A
+global one is asked once, and a per-project one once per project, in that project's
+coordinator chat. When a plugin update adds a setting, see `staying-current.md`. Note for
+future plugin authors: each new setting must say which kind it is.
 
 - **Project:** name and one-line description.
 - **Company:** one of the configured companies, `mixed` (only if the config offers it),

@@ -1,8 +1,9 @@
-# Alignment mode (a chat that already has coordinator instructions)
+# Existing coordinator chat (the user typed `/coordinator` in it)
 
 Run this when the chat is already a coordinator: it has coordinator instructions from an
 earlier paste or an earlier `/coordinator` run, or its title starts with `Coordinator #`.
-These instructions now replace the chat's current setup. Then:
+These instructions now replace the chat's current setup. (A plugin update needs none of
+this: it is applied automatically, see `staying-current.md`.) Then:
 
 1. Make sure the config is loaded (see `config-format.md`). If this chat's title isn't
    `Coordinator #<project-name>`, first ask the user what to call the project (unless the
@@ -20,10 +21,10 @@ These instructions now replace the chat's current setup. Then:
 3. Create whichever of this project's standing chats are missing (see
    `standing-chats.md`), and keep any that already exist. Rename an existing
    `.open-questions` chat to `.open-questions #<project-name> (<n> open)`.
-4. If the work lives in a repo, draft or update the "Coordinator and sub-chats" section of
+4. If the work lives in a repo, write or update the "Coordinator and sub-chats" section of
    the project's CLAUDE.md (see `claude-md-section.md`), including the standing chats'
    session IDs and the line `Coordinator plugin version: <version>` (set to the installed
-   version, since you are aligning to it), show it to the user, and write it only on their yes.
+   version). Don't show a draft or wait for a yes.
 5. For each sub-chat that's still running, send it the "Rules every brief must include"
    (see `brief-rules.md`) with its company filled in, since its original brief doesn't
    have those rules.

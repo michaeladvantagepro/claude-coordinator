@@ -1,6 +1,6 @@
 # Coordinator plugin for Claude Code
 
-`/coordinator` sets up or re-aligns a **coordinator chat**. The coordinator plans the
+`/coordinator` sets up or updates a **coordinator chat**. The coordinator plans the
 work with you, splits it into Knowledge, Build and Planning sub-chats, then reviews,
 combines and records what they produce. You talk to the coordinator; the sub-chats hand
 their work back to it automatically.
@@ -30,8 +30,8 @@ In the Claude Code terminal app, `/plugin marketplace add <url>` and
 
 **Updates:** turn on auto-update for the `claude-coordinator` marketplace
 (`/plugin` → Marketplaces), and new versions install the next time Claude starts.
-Coordinators that are already running tell you when a newer version arrives and offer
-to re-align.
+Coordinators that are already running update themselves on your next message and leave a
+short note listing what changed.
 
 ## Use
 

@@ -49,6 +49,11 @@ coordinator_picks_effort: true
 | `min_model_build_knowledge` | The lowest model for Build and Knowledge sub-chats. Default `Sonnet 5.5`. |
 | `coordinator_picks_effort` | Whether the coordinator may set effort levels on sub-chats. |
 
+Every key above is a **global** setting: it is about the person, not one project. The
+per-project settings (the project's company, its knowledge base output and the rest) live
+in the project's CLAUDE.md coordinator section (see `setup.md`). Note for future plugin
+authors: each new setting must say which kind it is.
+
 ## Using it
 
 Read the file at the start of every `/coordinator` run, in both modes. Later references

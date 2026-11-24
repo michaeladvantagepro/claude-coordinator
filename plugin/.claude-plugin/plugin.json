@@ -1,7 +1,7 @@
 {
   "name": "coordinator",
-  "version": "0.4.3",
-  "description": "A /coordinator command that sets up or re-aligns a Coordinator chat: it plans with you, splits work into Knowledge, Build and Planning sub-chats, then reviews, combines and records what they produce.",
+  "version": "0.4.4",
+  "description": "A /coordinator command that sets up or updates a Coordinator chat: it plans with you, splits work into Knowledge, Build and Planning sub-chats, then reviews, combines and records what they produce.",
   "author": {
     "name": "Michael Arndt"
   },

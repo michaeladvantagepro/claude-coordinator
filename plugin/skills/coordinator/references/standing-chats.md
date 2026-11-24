@@ -4,8 +4,8 @@ Every coordinator has exactly one of each, as its own sub-chats, for the life of
 project: `.changelog #<project-name>` and `.open-questions #<project-name> (<n> open)`
 (created as `(0 open)`).
 
-- Create both automatically at setup, without asking, before drafting the CLAUDE.md
-  section, so their session IDs go into the first draft. At alignment, create whichever is
+- Create both automatically at setup, without asking, before writing the CLAUDE.md
+  section, so their session IDs go into it. On an update or an existing chat, create whichever is
   missing and keep any that exist. A replacement coordinator (context full) takes over the
   existing pair and never creates new ones.
 - Build, Knowledge and Planning chats never get their own; they use the coordinator's.
@@ -35,7 +35,7 @@ project: `.changelog #<project-name>` and `.open-questions #<project-name> (<n> 
   the user.
 - **Live count in the title:** the chat is titled `.open-questions #<project-name> (<n>
   open)`. It keeps the count current by renaming itself whenever the count changes. This
-  is the one exception to "sub-chats never rename themselves". At alignment, rename an
+  is the one exception to "sub-chats never rename themselves". On an update or an existing chat, rename an
   existing `.open-questions` chat to this form.
 - **`.changelog`:** after every save, commit or merge to the main copy, send it one line
   per change: `YYYY-MM-DD #<area> <what changed> (<commit id, if any>)`. Agree the area
