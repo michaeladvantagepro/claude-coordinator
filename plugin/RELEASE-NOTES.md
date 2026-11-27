@@ -5,6 +5,10 @@ followed by a short bulleted list, one change per line, in plain language for a
 non-technical reader. (Entries before 0.4.4 are one or two sentences.) The update hook
 reads this file, so keep that heading format.
 
+## 0.4.7 - 2026-11-27
+- Coordinators no longer ask whether they may start sub-chats. They just start them.
+- If a chat can't be started (for example over Remote Control), the coordinator says so and writes a brief for you to paste.
+
 ## 0.4.6 - 2026-11-24
 - New article guide: article types, section layouts, step style, red-annotated images, frontmatter and a review checklist.
 - Knowledge chats follow it wherever a knowledge base's own guide is silent.

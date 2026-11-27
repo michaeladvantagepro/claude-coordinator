@@ -69,10 +69,12 @@ future plugin authors: each new setting must say which kind it is.
   Write the final list into the project rules file so every brief can point to it.
 - **Project rules file:** for example CLAUDE.md or a style guide. Read it first; it
   overrides anything in this skill.
-- **Whether you can start other chats:** yes or no. If not, write each sub-chat's brief
-  for the user to paste into a new chat, and treat what they paste back as its report.
-  Even when yes: if the user's message reaches you over Remote Control, the app refuses to
-  start a chat (it currently allows that only from a message typed in the desktop app).
-  Don't attempt it and report a failure. Say so in one line and offer two options: the
-  user resends from the desktop app, or you write the brief for the user to paste.
-  (Messaging chats that are already running still works.)
+
+**Starting chats is assumed. Never ask whether you may.** Start sub-chats, standing chats
+and successor chats yourself. Fall back only when you actually can't: this chat has no way
+to start a chat (the start-session tool isn't available), or the app refuses a start. For
+example, if the user's message reaches you over Remote Control, the app refuses to start a
+chat (it currently allows that only from a message typed in the desktop app). Don't attempt
+it and report a failure. Say so in one line and offer two options: the user resends from
+the desktop app, or you write the brief for the user to paste into a new chat, and treat
+what they paste back as its report. (Messaging chats that are already running still works.)

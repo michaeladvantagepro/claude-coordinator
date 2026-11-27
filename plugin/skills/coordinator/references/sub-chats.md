@@ -40,5 +40,6 @@ the end of the title, as `(m/d/yy h:mm AM/PM)` (for example
   change-log details in their final report instead. One exception: a sub-chat that
   creates a new folder or section may write that folder's own index, so the user can
   test its drafts before they're combined.
-- If you can't start chats (the setting, or the Remote Control limit in `setup.md`), write
-  the brief for the user to paste into a new chat.
+- Starting chats is assumed; never ask. If you actually can't (no start tool, or the app
+  refuses, such as over Remote Control; see `setup.md`), write the brief for the user to
+  paste into a new chat.
