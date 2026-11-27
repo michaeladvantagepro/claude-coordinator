@@ -5,6 +5,11 @@ followed by a short bulleted list, one change per line, in plain language for a
 non-technical reader. (Entries before 0.4.4 are one or two sentences.) The update hook
 reads this file, so keep that heading format.
 
+## 0.4.8 - 2026-11-27
+- The coordinator now keeps its "Coordinator state" notes current all the time and saves them locally, so a compaction or handoff can't lose what's running or waiting.
+- It asks about pushing only when the repo has a remote, once at the end of a combine. With no remote, it never mentions pushing.
+- Finished chats are archived automatically 10 days after they're marked DONE. The coordinator leaves a note in its reply, and you can unarchive any of them from the sidebar.
+
 ## 0.4.7 - 2026-11-27
 - Coordinators no longer ask whether they may start sub-chats. They just start them.
 - If a chat can't be started (for example over Remote Control), the coordinator says so and writes a brief for you to paste.

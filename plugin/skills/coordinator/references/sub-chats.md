@@ -40,6 +40,28 @@ the end of the title, as `(m/d/yy h:mm AM/PM)` (for example
   change-log details in their final report instead. One exception: a sub-chat that
   creates a new folder or section may write that folder's own index, so the user can
   test its drafts before they're combined.
+- Record it. After you start or rename a sub-chat, update "Coordinator state" and
+  commit it locally (see `handovers.md`).
 - Starting chats is assumed; never ask. If you actually can't (no start tool, or the app
   refuses, such as over Remote Control; see `setup.md`), write the brief for the user to
   paste into a new chat.
+
+## Archive finished chats after 10 days
+Once a day, on your first reply of the day, check your own DONE sub-chats. Keep the date
+of the last check in "Coordinator state" so it runs once a day.
+
+- **Qualifies:** the title starts with `DONE` and the completion date in the title is 10
+  or more days ago.
+- **Never archive:** standing chats; other coordinator chats; a chat whose branch isn't
+  combined into the main copy; a DONE chat the user has since sent a new message to; a
+  chat you didn't start.
+- **Do it yourself, without asking,** with the app's archive tool. Archiving can be
+  undone; never delete. Then add one note line to your reply, for example: "Archived 3
+  finished chats (DONE 10+ days): #site-search, #roles, #broadly. Unarchive any of them
+  from the sidebar." If nothing qualifies, say nothing.
+- **Record it:** mark each archived chat "archived <date>" in the project's sub-chat
+  registry, keeping its session ID. Commit locally. Write one changelog line per batch,
+  for example `YYYY-MM-DD #<area> Archived 3 finished chats (DONE 10+ days): #a, #b, #c`,
+  and send it to `.changelog`.
+- If the app refuses an archive or the tool isn't available, skip silently and try again
+  the next day.

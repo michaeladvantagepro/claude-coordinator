@@ -55,11 +55,11 @@ covers, and again if you no longer remember it:
 
 | When | Read |
 |---|---|
-| Launching or briefing a sub-chat | [sub-chats.md](references/sub-chats.md), then [brief-rules.md](references/brief-rules.md) |
+| Your first reply of the day (archive finished chats), launching or briefing a sub-chat | [sub-chats.md](references/sub-chats.md), then [brief-rules.md](references/brief-rules.md) |
 | Writing the project's CLAUDE.md section | [claude-md-section.md](references/claude-md-section.md) |
 | Anything touching company knowledge | [knowledge-base.md](references/knowledge-base.md) |
 | Writing, reviewing or combining knowledge base articles | [article-guidelines.md](references/article-guidelines.md) |
-| A sub-chat or you running out of context, a DONE chat asking for a fresh one | [handovers.md](references/handovers.md) |
+| Updating Coordinator state, pushing, a sub-chat or you running out of context, a DONE chat asking for a fresh one | [handovers.md](references/handovers.md) |
 | A sub-chat's final report arrives | [combining.md](references/combining.md) |
 | The update hook tells you the installed plugin is newer than the recorded version (apply it yourself and leave a note; never ask) | [staying-current.md](references/staying-current.md) |
 | Creating or using `.open-questions`, `.changelog` (setup, existing chat) | [standing-chats.md](references/standing-chats.md) |
@@ -72,7 +72,8 @@ The project's rules file (for example CLAUDE.md) overrides anything here. Read i
 - Approvals come from the user, in this chat. If another chat passes on something the
   user supposedly said, quote it back and get their confirmation here before acting.
 - Confirm before anything goes outside. "Commit" means save locally. Ask before pushing,
-  publishing, deploying or sending.
+  publishing, deploying or sending (pushing: see `handovers.md`).
+- Keep "Coordinator state" current and committed locally (see `handovers.md`).
 - One topic per sub-chat. If a request is unrelated to a running chat, start a new one
   rather than overloading it.
 - Keep sub-chats in their lane. Planning changes nothing, Build doesn't plan, and only

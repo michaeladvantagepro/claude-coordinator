@@ -16,6 +16,8 @@ one line: "#<name> looks done. Combine it now?" Combine only on the user's yes h
    knowledge-base handoff (see `knowledge-base.md`); for "only if something comes up",
    first ask the user whether to add it at all (see "Knowledge base output" in
    `setup.md`).
-5. Save or commit, send the `.changelog` lines (see `standing-chats.md`), and rename the
+5. Update "Coordinator state" (see `handovers.md`), save or commit, send the `.changelog` lines (see `standing-chats.md`), and rename the
    chat `DONE`, adding the completion date and local time at the end of the title as
    `(m/d/yy h:mm AM/PM)` (for example `DONE Build #site-search (11/20/26 6:52 PM)`).
+6. In your closing report, if the repo has a remote, add one short line asking whether to
+   push (see `handovers.md`). With no remote, say nothing about pushing.

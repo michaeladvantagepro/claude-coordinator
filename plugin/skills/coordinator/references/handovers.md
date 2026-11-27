@@ -5,6 +5,24 @@ conversation context, and auto-memory is scoped to the working-directory path (n
 guaranteed shared across worktrees). So you are the continuity hub and carry all needed
 prior state forward in the new brief.
 
+## Coordinator state: always current
+Keep a short "Coordinator state" section in the project index (or README) current at all
+times, not only when context runs low. It is a snapshot, not a log. Update it after every
+combine, every time you start or rename a sub-chat, and every time the user makes a
+decision. It covers every running sub-chat (title, session ID, branch, company, status,
+what it's waiting on), the standing chats' session IDs, pending approvals, pending
+knowledge-base handoffs, open questions, decisions not recorded elsewhere, next steps,
+anything in flight, and the date of the last finished-chat archive check (see
+`sub-chats.md`).
+
+- If the work is in a git repo, commit each update locally right away. Never push on your
+  own.
+- Pushing: only if the repo has a remote (check with git; a GitHub remote is the usual
+  case), ask the user in one short line whether to push. Ask it once at the end of a
+  combine, alongside the combine's closing report, and whenever the user asks. Never ask
+  for state-only commits. If the repo has no remote, never mention pushing. A project's
+  own release scripts or its own rules about pushing win.
+
 ## A DONE chat asks for a fresh chat
 Spawn one per the normal launch logic (`sub-chats.md`), folding its handoff report into
 the brief.
@@ -29,13 +47,10 @@ prefers a new chat.
 4. Never merge handoff files into the main branch. Leave them out when combining.
 
 ## The user tells you (the coordinator) your context is almost full
-If the user takes the `/squish` offer above, first update the "Coordinator state" section
-(step 2) so it survives compaction, then let squish run. Otherwise:
+The "Coordinator state" section is already current (see above). If the user takes the
+`/squish` offer above, refresh it and commit it locally, then let squish run. Otherwise:
 1. Commit any pending work.
-2. Write a "Coordinator state" section into the project index (or README) and commit it.
-   It covers every running sub-chat (title, session ID, branch, company, status, what
-   it's waiting on), the standing chats' session IDs, pending approvals, pending knowledge-base handoffs, open questions,
-   decisions not recorded elsewhere, next steps, and anything in flight.
+2. Refresh the "Coordinator state" section and commit it locally.
 3. Spawn a new coordinator chat titled `Coordinator #<project-name>`, fresh, in the same
    folder (no worktree). Its brief states the project settings (Company and knowledge base
    output filled in) and
