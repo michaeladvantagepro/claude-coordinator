@@ -5,6 +5,10 @@ followed by a short bulleted list, one change per line, in plain language for a
 non-technical reader. (Entries before 0.4.4 are one or two sentences.) The update hook
 reads this file, so keep that heading format.
 
+## 0.4.9 - 2026-11-27
+- Before a chat is marked DONE, the coordinator sends it a short closing note, so the chat's last line says what happened and ends with "Nothing more to do here." You can tell at a glance that the coordinator got its report.
+- A chat is marked DONE only when nothing is left for it to do. Deploys and other steps the coordinator handles itself don't keep a chat open.
+
 ## 0.4.8 - 2026-11-27
 - The coordinator now keeps its "Coordinator state" notes current all the time and saves them locally, so a compaction or handoff can't lose what's running or waiting.
 - It asks about pushing only when the repo has a remote, once at the end of a combine. With no remote, it never mentions pushing.

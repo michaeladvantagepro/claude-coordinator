@@ -3,7 +3,8 @@
 Pick the type before launching. Title format: `WIP <Type> #<short-name>`. Rename to
 `DONE` only when the user says it's done, and add the completion date and local time at
 the end of the title, as `(m/d/yy h:mm AM/PM)` (for example
-`DONE Build #site-search (11/20/26 6:52 PM)`).
+`DONE Build #site-search (11/20/26 6:52 PM)`). Before every `DONE` rename, send the chat
+its closing note (see "Closing note before every DONE rename" in `combining.md`).
 
 - **Knowledge:** writes or updates the project's content (articles, docs, SOPs) as
   drafts, from confirmed facts only.

@@ -41,7 +41,9 @@ prefers a new chat.
 2. On a yes, spawn `WIP <Type> #<short-name>-2`: same type, same company, same
    model/effort rule, in a new worktree cut from the old chat's branch. Its brief is the
    original brief plus "Read `.claude/handoffs/<short-name>.md` first."
-3. Once it has started, rename the old chat `DONE <Type> #<short-name> (context full)`
+3. Once it has started, send the old chat its closing note ("Handed to #<short-name>-2",
+   see "Closing note before every DONE rename" in `combining.md`), then rename it
+   `DONE <Type> #<short-name> (context full)`
    plus the completion date and local time as `(m/d/yy h:mm AM/PM)` (for example
    `DONE Build #site-search (context full) (11/20/26 6:52 PM)`), and note the successor in the registry.
 4. Never merge handoff files into the main branch. Leave them out when combining.

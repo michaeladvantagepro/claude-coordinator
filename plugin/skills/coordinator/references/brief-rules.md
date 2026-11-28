@@ -82,4 +82,6 @@ user's own rules. Paste it as is.
    d. Known gaps. Questions still open when you finish become known gaps: add a short
       "Known gaps" section at the end of the article, and a one-line note at each
       affected step. They also stay in `.open-questions`.
+8. Closing note: when the coordinator sends a closing note that asks for one reply line,
+   reply with only that line and do nothing else.
 ```
